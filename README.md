@@ -1,17 +1,17 @@
-# Proyecto de Animación de Nave en Blender con Interpolaciones
+# Proyecto de Animacion de Nave en Blender con Interpolaciones
 
-Este proyecto consiste en la creación y animación de una nave utilizando Blender y Python. El script automatiza la creación de objetos, la asignación de materiales, la configuración de cámaras, y la animación mediante interpolaciones de las trayectorias de la nave.
+Este proyecto consiste en la creacion y animación de una nave utilizando Blender y Python. El script automatiza la creación de objetos, la asignación de materiales, la configuración de cámaras, y la animación mediante interpolaciones de las trayectorias de la nave.
 
 ## Funcionalidades
 
 ### Purga de Objetos Huérfanos
-La función `purge_orphans()` limpia objetos huérfanos en la escena para liberar memoria, adaptándose tanto a versiones de Blender anteriores a la 3.0 como a las versiones 3.0 y superiores.
+La funcion `purge_orphans()` limpia objetos huérfanos en la escena para liberar memoria, adaptándose tanto a versiones de Blender anteriores a la 3.0 como a las versiones 3.0 y superiores.
 
 ### Limpieza de la Escena
 `clean_scene()` elimina objetos existentes, colecciones, y materiales innecesarios en la escena para dejarla limpia y lista para nuevas adiciones.
 
 ### Configuración de la Cámara
-La función `setup_camera()` agrega una cámara, la posiciona y la orienta según las coordenadas y rotaciones proporcionadas. Además, le asigna una propiedad para seguir a un objeto de control.
+La función `setup_camera()` agrega una cámara, la posiciona y la orienta según las coordenadas y rotaciones proporcionadas.Además, le asigna una propiedad para seguir a un objeto de control.
 
 ### Creación de Materiales
 Las funciones `create_metal_ring_material()` y `create_floor_material()` crean materiales con diferentes propiedades como colores aleatorios y ajustes para reflejar o emitir luz. El material metálico se utiliza en el cuerpo de la nave y el material del piso en el plano donde la nave aterriza.
@@ -23,7 +23,7 @@ La función `animate_object()` asigna una trayectoria a la nave mediante interpo
 `create_flying_saucer()` es la función principal que crea el modelo 3D de la nave. Incluye el cuerpo, la cúpula, las patas y luces de la nave. Además, aplica materiales como el material metálico para el cuerpo y materiales emisivos para las luces.
 
 ### Creación de la Ruta de la Nave
-`create_path()` se encarga de crear una curva 3D, la cual representa el trayecto que seguirá la nave. Esta función acepta un conjunto de keyframes para definir las posiciones y tiempos de la nave.
+`create_path()` se encarga de crear una curva 3D, la cual representa el trayecto que seguirá la nave. Esta funcion acepta un conjunto de keyframes para definir las posiciones y tiempos de la nave.
 
 ## Estructura del Proyecto
 
