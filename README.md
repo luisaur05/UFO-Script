@@ -1,66 +1,63 @@
-# Proyecto de Animacion de Nave en Blender con Interpolaciones
+# Flying Saucer Animation Project in Blender with Interpolations
 
-Este proyecto consiste en la creacion y animación de una nave utilizando Blender y Python. El script automatiza la creación de objetos, la asignación de materiales, la configuración de cámaras, y la animación mediante interpolaciones de las trayectorias de la nave.
+This project involves creating and animating a flying saucer using Blender and Python. The script automates object creation, material assignment, camera setup, and animation through trajectory interpolations.
 
-## Funcionalidades
+## Features
 
-### Purga de Objetos Huérfanos
-La funcion `purge_orphans()` limpia objetos huérfanos en la escena para liberar memoria, adaptándose tanto a versiones de Blender anteriores a la 3.0 como a las versiones 3.0 y superiores.
+### Orphan Data Purge
+The `purge_orphans()` function clears orphaned data in the scene to free memory, supporting both Blender versions before 3.0 and 3.0+.
 
-### Limpieza de la Escena
-`clean_scene()` elimina objetos existentes, colecciones, y materiales innecesarios en la escena para dejarla limpia y lista para nuevas adiciones.
+### Scene Cleanup
+`clean_scene()` removes existing objects, collections, and unused materials, preparing the scene for new additions.
 
-### Configuración de la Cámara
-La función `setup_camera()` agrega una cámara, la posiciona y la orienta según las coordenadas y rotaciones proporcionadas.Además, le asigna una propiedad para seguir a un objeto de control.
+### Camera Setup
+The `setup_camera()` function adds a camera, positions it, and orients it based on given coordinates and rotations. It also assigns a property to track a control object.
 
-### Creación de Materiales
-Las funciones `create_metal_ring_material()` y `create_floor_material()` crean materiales con diferentes propiedades como colores aleatorios y ajustes para reflejar o emitir luz. El material metálico se utiliza en el cuerpo de la nave y el material del piso en el plano donde la nave aterriza.
+### Material Creation
+Functions like `create_metal_ring_material()` and `create_floor_material()` generate materials with properties such as random colors and settings for reflection or light emission. The metallic material is applied to the saucer's body, and the floor material is used for the landing plane.
 
-### Animación de la Nave
-La función `animate_object()` asigna una trayectoria a la nave mediante interpolaciones entre los puntos clave. Utiliza las interpolaciones 'CUBIC' y 'BEZIER' para un movimiento más fluido.
+### Saucer Animation
+The `animate_object()` function assigns a trajectory to the saucer using interpolations between key points. It utilizes 'CUBIC' and 'BEZIER' interpolations for smoother motion.
 
-### Creación de la Nave
-`create_flying_saucer()` es la función principal que crea el modelo 3D de la nave. Incluye el cuerpo, la cúpula, las patas y luces de la nave. Además, aplica materiales como el material metálico para el cuerpo y materiales emisivos para las luces.
+### Flying Saucer Creation
+`create_flying_saucer()` is the primary function for building the 3D saucer model. It includes the body, dome, legs, and lights. It also applies materials like the metallic material for the body and emissive materials for the lights.
 
-### Creación de la Ruta de la Nave
-`create_path()` se encarga de crear una curva 3D, la cual representa el trayecto que seguirá la nave. Esta funcion acepta un conjunto de keyframes para definir las posiciones y tiempos de la nave.
+### Saucer Path Creation
+The `create_path()` function creates a 3D curve representing the saucer's path. This function accepts a set of keyframes to define the saucer's positions and timing.
 
-## Estructura del Proyecto
+## Project Structure
 
-### Funciones Clave:
-- `purge_orphans()`: Elimina datos huérfanos en la escena.
-- `clean_scene()`: Limpia la escena, eliminando objetos y colecciones no deseados.
-- `add_ctrl_empty()`: Crea un objeto vacío de control en la escena.
-- `track_empty()`: Agrega un control para que un objeto "mire" a un objetivo.
-- `animate_object()`: Inserta keyframes para animar un objeto a lo largo de una trayectoria definida.
-- `create_flying_saucer()`: Crea y monta la nave voladora con su geometría y materiales.
-- `create_path()`: Genera una ruta para la animación de la nave.
+### Key Functions:
+- `purge_orphans()`: Removes orphaned data from the scene.
+- `clean_scene()`: Cleans the scene by deleting unwanted objects and collections.
+- `add_ctrl_empty()`: Creates an empty control object in the scene.
+- `track_empty()`: Sets up a control for an object to "look at" a target.
+- `animate_object()`: Adds keyframes to animate an object along a defined trajectory.
+- `create_flying_saucer()`: Builds and assembles the flying saucer with its geometry and materials.
+- `create_path()`: Generates a path for the saucer's animation.
 
-### Objetos de la Nave:
-1. **Cuerpo**: Una esfera uv achatada que representa el cuerpo de la nave.
-2. **Cúpula**: Una esfera adicional agregada encima del cuerpo.
-3. **Patas**: Cuatro patas cilíndricas agregadas en la parte inferior de la nave.
-4. **Luces**: Ocho luces emisivas ubicadas en el cuerpo de la nave.
+### Saucer Components:
+1. **Body**: A flattened UV sphere representing the saucer's main body.
+2. **Dome**: An additional sphere placed atop the body.
+3. **Legs**: Four cylindrical legs added to the bottom of the saucer.
+4. **Lights**: Eight emissive lights positioned on the saucer's body.
 
-### Interpolaciones:
-El movimiento de la nave se maneja mediante interpolaciones de tipo 'CUBIC' y 'BEZIER' para asegurar transiciones suaves entre los keyframes.
+### Interpolations
+The saucer's movement is managed through 'CUBIC' and 'BEZIER' interpolations to ensure smooth transitions between keyframes.
 
-## Requisitos:
-- Blender 3.x o superior.
-- Conocimiento básico de scripting en Python para Blender.
+## Requirements
+- Blender 3.x or later.
+- Basic knowledge of Python scripting for Blender.
 
-## Cómo Ejecutar el Script:
-1. Abre Blender.
-2. Ve a la ventana de scripting.
-3. Crea un nuevo script y copia el código.
-4. Ejecútalo para crear y animar la nave voladora.
+## How to Run the Script
+1. Open Blender.
+2. Navigate to the scripting workspace.
+3. Create a new script and paste the code.
+4. Run the script to create and animate the flying saucer.
 
-## Observaciones:
-- Este proyecto utiliza materiales con nodos y configuraciones específicas para lograr efectos visuales realistas, como la emisión de luz en la nave.
-- La animación de la nave se puede personalizar añadiendo o modificando los keyframes en la función `animate_object()`.
+## Notes
+- This project uses materials with nodes and specific configurations to achieve realistic visual effects, such as light emission from the saucer.
+- The saucer's animation can be customized by adding or modifying keyframes in the `animate_object()` function.
 
-
-
-
-
-Demo video: https://youtu.be/ylmtM0hIKp8
+## Demo Video
+[https://youtu.be/ylmtM0hIKp8](https://youtu.be/ylmtM0hIKp8)
